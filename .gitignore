@@ -1,0 +1,6 @@
+/__pycache__
+/build
+/dist
+/labels
+log.log
+config.json
