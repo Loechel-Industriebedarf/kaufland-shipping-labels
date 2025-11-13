@@ -1,0 +1,22 @@
+{
+  "shop_client_key": "",
+  "shop_secret_key": "",
+  "label_path": "T:\\labels",
+  "sandbox": true,
+  "test_uri": "https://sellerapi-playground.kaufland.com/v2/shipping-labels",
+  "live_uri": "https://sellerapi.kaufland.com/v2/shipping-labels",
+  "sql": {
+    "driver": "{ODBC Driver 18 for SQL Server}",
+    "server": "server-69",
+    "database": "",
+    "username": "",
+    "password": "",
+    "encrypt": true,
+    "trust_server_certificate": true,
+    "order_query": "SELECT dbo.AUFTRAGSPOS.CODE1, dbo.ARTIKEL.BBREITE, dbo.ARTIKEL.BHOEHE, dbo.ARTIKEL.BTIEFE, dbo.ARTIKEL.BGEWICHT, dbo.AUFTRAGSKOPF.FSROWID FROM dbo.ARTIKEL INNER JOIN dbo.AUFTRAGSPOS ON dbo.ARTIKEL.ARTIKELNR = dbo.AUFTRAGSPOS.ARTIKELNR LEFT JOIN dbo.AUFTRAGSKOPF on dbo.AUFTRAGSPOS.BELEGNR = dbo.AUFTRAGSKOPF.BELEGNR WHERE dbo.AUFTRAGSPOS.BELEGNR = ?",
+    "insert_tracking_query": "INSERT INTO dbo.AdditionalFieldValue (FSROWVERSION, DefRowID, TableRowID, ValueString) VALUES (0, '{BEF38EDC-2DBF-11E8-949A-000C29018628}', ?, ?)",
+    "insert_carrier_query": "INSERT INTO dbo.AdditionalFieldValue (FSROWVERSION, DefRowID, TableRowID, ValueString) VALUES (0, '{91B2ACAD-791A-11E8-BB51-000C29018628}', ?, 'GLS')",
+    "update_memo_query": "UPDATE dbo.AUFTRAGSKOPF SET MEMO = ? WHERE dbo.AUFTRAGSKOPF.BELEGNR = ?"
+  }
+}
+
